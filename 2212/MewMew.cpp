@@ -1,29 +1,65 @@
-ï»¿#include <iostream>
-
+#include <iostream>
+#include <time.h>
+#include <Windows.h>
+#include <conio.h>
+#include <mmSystem.h>
+#pragma comment(lib, "winmm.lib")
+#include <tchar.h>
+#include <Digitalv.h>
 using namespace std;
 
-/**int sad(int ginum) {
-    int num = rand() % 10;
+void sad() {
+    int num = rand() % 11;
+
     string str[20];
-    str[0] = "ì„±ê³µí•˜ëŠ” ì‚¬ëŒì€ í–‰ë™ì„ í•˜ê³ , í–‰ìš´ê³¼ ë¶ˆìš´ì„ ëª¨ë‘ ëŒì–´ì•ˆìœ¼ë©° ê²°êµ­ì—ëŠ” ë¬´ì–¸ê°€ë¥¼ ì´ë£¨ì–´ë‚´ê³¤ í•œë‹¤.";
-    
+    str[0] = "¼º°øÇÏ´Â »ç¶÷Àº Çàµ¿À» ÇÏ°í, Çà¿î°ú ºÒ¿îÀ» ¸ğµÎ ²ø¾î¾ÈÀ¸¸ç °á±¹¿¡´Â ¹«¾ğ°¡¸¦ ÀÌ·ç¾î³»°ï ÇÑ´Ù.";
+    str[1] = "½Ã°£ÀÌ ´ú¾îÁÖÁö ¾Ê´Â ½½ÇÄÀº ¾ø´Ù. - ¼¼¸£ºñ¿ì½º ¼öÇ®¸®Å°¿ì½º,Å°ÄÉ·Î";
+    str[2] = "½½ÇÄÀº ±× ÀÚÃ¼°¡ ¾àÀÌ´Ù. - W.ÄíÆÛ";
+    str[3] = "½½ÇÄÀÇ À¯ÀÏÇÑ Ä¡·á¹ıÀº Çàµ¿ÀÌ´Ù. - G.H.·ùÀÌ½º";
+    str[4] = "½½ÇÂ ¸¶À½ÀÌ¿©, Ä§ÂøÇÏ°í Åº½ÄÀ» ¸ØÃß¶ó.±¸¸§ µÚ¿£ ¾ÆÁ÷µµ ÇŞºûÀÌ ºû³ª°í ÀÖ´Ù. - ·ÕÆä·Î¿ì";
+    str[5] = "»õº®ÀÌ Ã£¾Æ¿ÀÁö ¾Ê´Â ¹ãÀº ¾ø´Ù. ÀÎ³»¿Í Èñ¸ÁÀ» °¡Á®¶ó.";
+    str[6] = "¿ì¸®¸¦ ´«¹°·Î ÀÎµµÇÏ´Â °ÍÀº ¿ì¸®¸¦ ÀºÇı·Î ÀÎµµ ÇÒ °ÍÀÔ´Ï´Ù. ¿ì¸®ÀÇ °íÅëÀº °áÄÚ ³¶ºñÇÏÁö ¾Ê½À´Ï´Ù. - ¹ä °íÇÁ";
+    str[7] = "¶¥ À§ÀÇ ´«¹° ¹æ¿ïÀÌ ÇÏ´ÃÀÇ ¿ÕÀ» ¼ÒÈ¯ÇÕ´Ï´Ù. - Charles R. Swindoll";
+    str[8] = "°ÆÁ¤Àº ³»ÀÏÀÇ ½½ÇÄÀ» »©¾Ñ´Â °ÍÀÌ ¾Æ´Ï¶ó, ¿À´ÃÀÇ ±â»İ¸¸ »©¾Ñ¾Æ°©´Ï´Ù. - ·¹¿À ºÎ ½ºÄ« ±Û ¸®¾Æ";
+    str[9] = "°°Àº ½Ç¼ö¸¦ µÎ·Á¿öÇÏµÇ »õ·Î¿î ½Ç¼ö¸¦ µÎ·Á¿öÇÏÁö ¸¶¶ó. ½Ç¼ö´Â °ğ °æÇèÀÌ´Ù - µµ¼­ '¾î¶² ÇÏ·ç'";
+    str[10] = "¿ì¸®°¡ ¹«½¼ »ı°¢À» ÇÏ´À³Ä°¡ ¿ì¸®°¡ ¾î¶² »ç¶÷ÀÌ µÇ´ÂÁö¸¦ °áÁ¤ÇÑ´Ù. - ¿ÀÇÁ¶ó À©ÇÁ¸®";
+
+    cout << str[num];
+    cout << endl;
+}
+
+void angry() {
+    int num = rand() % 11;
+
+    string str[20];
+    str[0] = "ºĞ³ë´Â ¹«¸ğÇÔÀ¸·Î ½ÃÀÛÇØ ÈÄÈ¸·Î ³¡³­´Ù - ÇÇÅ¸°í¶ó½º";
+    str[1] = "È­°¡ ³¯ ¶§´Â 10°¡Áö ¼¼¾î¶ó. È­°¡ ³Ê¹« ¸¹ÀÌ ³¯ ¶§´Â 100°¡Áö ¼¼¾î¶ó - Åä¸Ó½º Á¦ÆÛ½¼";
+    str[2] = "ºĞ³ë¸¦ ¾ïÁ¦ÇÏ·Á¸é ´Ù¸¥ »ç¶÷ÀÌ ºĞ³ëÇÒ ¶§ ±×°ÍÀ» ÀÚ¼¼È÷ °üÂûÇØº¸¶ó - ¼¼³×Ä«";
+    str[3] = "ºĞ³ëÇÏ¿© °¡ÇÏ´Â ÀÏ°İÀº °á±¹ ¿ì¸® ÀÚ½ÅÀ» ¶§¸°´Ù - Àª¸®¾ö Ææ";
+    str[4] = "ÇÑ¶§ÀÇ ºĞÇÔÀ» ÂüÀ¸¸é ¹é³¯ÀÇ ±Ù½ÉÀ» ¸éÇÑ´Ù - ¸í½Éº¸°¨";
+    str[5] = "È­³µÀ» ¶§´Â ¾Æ¹«°Íµµ ÇÏÁö ¸»¶ó. ÇÏ´Â ÀÏ¸¶´Ù Àß¸øµÉ °ÍÀÌ´Ù - ±×¶ó½Ã¾È ";
+    str[6] = "ÀÎ°£ÀÇ »î ÀüÃ¼´Â ´ÜÁö ÇÑ ¼ø°£¿¡ ºÒ°úÇÏ´Ù. ÀÎ»ıÀ» Áñ±âÀÚ - ÇÃ·çÅ¸¸£ÄÚ½º  ";
+    str[7] = "È­°¡ ³ª ÀÖ´Â 1ºĞ¸¶´Ù ±×´ë´Â 60ÃÊ°£ÀÇ Çàº¹À» ÀÒ´Â´Ù - ¶öÇÁ ¿Ğµµ ¿¡¸Ó½¼";
+    str[8] = "ºĞ³ëÇÒ ¶§´Â ÃµÃµÈ÷. ½Ã°£Àº ÃæºĞÇÏ´Ï±î. -¶öÇÁ ¿Ğµµ ¿¡¸Ó½¼ ";
+    str[9] = "ÀÏ´ÜÀº ¾Ë¾ÆÂ÷¸²ÀÌ ¸ÕÀú ÀÏ¾î³ª¾ß ÇÕ´Ï´Ù. ¾Ë¾ÆÂ÷¸®±â¸¸ ÇØµµ ¾î¶² ¹®Á¦´Â ÀúÀı·Î ÇØ°áµÇ±âµµ ÇÕ´Ï´Ù. - ¹ı·û½º´Ô";
+    str[10] = "ºĞ³ë¸¦ ¾ø¾Ö·Á¸é ¾Æ¹«°Íµµ ÇÏÁö ¸»¾Æ¾ß ÇÑ´Ù. ¸öÀ» ¿òÁ÷ÀÌ°Å³ª,Çô¸¦ ¿òÁ÷ÀÌ´Â ¼ø°£ ºĞ³ë´Â ´õ Ä¿Áú °ÍÀÌ±â ¶§¹®ÀÌ´Ù. \n È­¸¦ ³»¸é ÁÖÀ§ÀÇ »ç¶÷µéÀº ¸¹Àº »óÃ³¸¦ ÀÔ´Â´Ù. ±×·¯³ª ±×º¸´Ù ´õ Å« »óÃ³¸¦ ÀÔ´Â »ç¶÷Àº  \n ¹Ù·Î È­¸¦ ³½ ´ç»çÀÚ ÀÌ´Ù. - Åç½ºÅäÀÌ";
+
+    cout << str[num];
+    cout << endl;
+
+}
 
 
-    return str[num];
-}*/
-
-/*void angry(int ginum) {
-
-
-}*/
 int main() {
+    srand((unsigned)time(NULL));
     char name[30];
+    int Staynum;
     int ginum;
     cout << "                                                                            " << endl;
     cout << "  ####             ####                                                     " << endl;
     cout << "  ##  ##          ## ##                                                     " << endl;
     cout << "  ##   ##       ##   ##                                                  " << endl;
-    cout << "  ##    ##     ##    ##                                                        " << endl; 
+    cout << "  ##    ##     ##    ##                                                        " << endl;
     cout << "  ##      ##  ##     ##       #############      ##                  ##     " << endl;
     cout << "  ##       ##        ##      ##           ##     ##      ####        ##     " << endl;
     cout << "  ##                 ##     ##            ##     ##      ##  ##      ##    " << endl;
@@ -48,8 +84,7 @@ int main() {
     cout << "            ##                 ##       ##############          #####    ####                *             " << endl;
     cout << "                                                                                                            " << endl;
     cout << "                                                                                                         " << endl;
-
-
+    cout << "                                                                                       by. À±ÁÖÈñ        " << endl;
 
 
 
@@ -59,37 +94,133 @@ int main() {
     cout << "====                                                                                                        ====" << endl;
     cout << "====                                                                                                        ====" << endl;
     cout << "====                                                                                                        ====" << endl;
-    cout << "====                     ì•ˆë…•í•˜ì„¸ìš” ë®¤ë®¤ì—ìš”! ì‚¬ìš©ìë‹˜ì˜ ì„±í•¨ì„ ì…ë ¥í•´ì£¼ì„¸ìš”  (ë³„ëª…ë„ ê°€ëŠ¥!)                ====" << endl;
+    cout << "====                     ¾È³çÇÏ¼¼¿ä ¹Â¹Â¿¡¿ä! »ç¿ëÀÚ´ÔÀÇ ¼ºÇÔÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä  (º°¸íµµ °¡´É!)                ====" << endl;
     cout << "====                                                                                                        ====" << endl;
-    cout << "                                  >> ì´ë¦„ ì…ë ¥ :";  cin >> name;
-    cout << "                  ë°˜ê°€ì›Œìš” " << name << "ë‹˜!! ë®¤ë®¤ê°€ " << name << " ë‹˜ ê¸°ë¶„ì— ê¼­ ë§ëŠ” ë…¸ë˜ ì¶”ì²œ í•´ë“œë¦´ê²Œìš”!!        " << endl;                                                                            
-    cout << "====                                                                                                        ====" << endl;
-    cout << "====                                                                                                        ====" << endl;
-    cout << "====                            " << name << "ë‹˜! ì˜¤ëŠ˜ì˜ ê¸°ë¶„ì€ ì–´ë– ì‹ ê°€ìš”?                                            ====" << endl;
+    cout << "                                  >> ÀÌ¸§ ÀÔ·Â :";  cin >> name;
+    cout << "                  ¹İ°¡¿ö¿ä " << name << "´Ô!! ¹Â¹Â°¡ " << name << " ´Ô ±âºĞ¿¡ ²À ¸Â´Â ³ë·¡ ÃßÃµ ÇØµå¸±°Ô¿ä!!        " << endl;
     cout << "====                                                                                                        ====" << endl;
     cout << "====                                                                                                        ====" << endl;
-    cout << "==  1. ë„ˆë¬´ í–‰ë³µí•´ìš”!! 'í–‰ë³µ'  2. ìŠ¬í¼ìš”ã… ã…  ìœ„ë¡œê°€ í•„ìš”í•´ìš” 'ìŠ¬í””'  3. ë‹¤ ë¶€ì…”ë²„ë¦¬ê³  ì‹¶ë‹¤!! í™”ê°€ë‚˜ìš” 'ë¶„ë…¸'  ==" << endl;
+    cout << "====                            " << name << "´Ô! ¿À´ÃÀÇ ±âºĞÀº ¾î¶°½Å°¡¿ä?                                         ====" << endl;
     cout << "====                                                                                                        ====" << endl;
     cout << "====                                                                                                        ====" << endl;
-    cout << "====                * ê·¸ ì™¸ì— ë®¤ë®¤ì˜ ì¶”ì²œ ê³¡ì„ ë” ë“£ê³  ì‹¶ìœ¼ì‹œë©´ ì•„ë¬´ í‚¤ë‚˜ ëˆŒëŸ¬ì£¼ì„¸ìš”! *                     ====" << endl;
-    cout << "====                      " << name << "ë‹˜ì˜ ê¸°ë¶„ì„ ì•Œë ¤ì£¼ì„¸ìš”! >> "; cin >> ginum;
+    cout << "==  1. ³Ê¹« Çàº¹ÇØ¿ä!! 'Çàº¹'  2. ½½ÆÛ¿ä¤Ğ¤Ğ À§·Î°¡ ÇÊ¿äÇØ¿ä '½½ÇÄ'  3. ´Ù ºÎ¼Å¹ö¸®°í ½Í´Ù!! È­°¡³ª¿ä 'ºĞ³ë'  ==" << endl;
+    cout << "====                                                                                                        ====" << endl;
+    cout << "====                                                                                                        ====" << endl;
+    cout << "====                * ±× ¿Ü¿¡ ¹Â¹ÂÀÇ ÃßÃµ °îÀ» µè°í ½ÍÀ¸½Ã¸é ¾Æ¹« Å°³ª ´­·¯ÁÖ¼¼¿ä! *                     ====" << endl;
+    cout << "====                      " << name << "´ÔÀÇ ±âºĞÀ» ¾Ë·ÁÁÖ¼¼¿ä! >> "; cin >> ginum;
 
     switch (ginum) {
     case 1: cout << "================================================================================================================" << endl;
-            cout << "\n";
-            cout << "                    "<< name << "  ë‹˜! ë®¤ë®¤ê°€ ë” ê¸°ë¶„ì„ ë” ì¢‹ê²Œ ë§Œë“¤ì–´ë“œë¦´ê²Œìš”!! > <  ë®¤ë®¤ì˜ ì¶”ì²œ í”Œë ˆì´ ë¦¬ìŠ¤íŠ¸ëŠ” " << endl; break;
+        cout << "\n";
+        cout << "                    " << name << "  ´Ô! ¹Â¹Â°¡ ´õ ±âºĞÀ» ´õ ÁÁ°Ô ¸¸µé¾îµå¸±°Ô¿ä!! > <  ¹Â¹ÂÀÇ ÃßÃµ ÇÃ·¹ÀÌ ¸®½ºÆ®´Â " << endl; 
+        cout << "Åõ¸ğ·Î¿ì¹ÙÀÌÅõ°Ô´õ - Magic" << endl;
+        PlaySound("magic.wav", 0, SND_FILENAME | SND_ASYNC | SND_NODEFAULT);
+        _getch();
+
+        break;
     case 2: cout << "================================================================================================================" << endl;
-            cout << "\n";
-            cout << "                    " << name << "  ë‹˜ì„ ìœ„í•œ ë®¤ë®¤ì˜ í”Œë ˆì´ ë¦¬ìŠ¤íŠ¸ëŠ” " << endl;  break;
-            //cout << "                    " << sad(ginum);  break;
+        cout << "\n";
+        sad();
+        cout << "\n";
+        cout << "                    " << name << "  ´ÔÀ» À§ÇÑ ¹Â¹ÂÀÇ ÇÃ·¹ÀÌ ¸®½ºÆ®´Â " << endl;
+        cout << "The Kid LAROI, Justin Bieber - Stay" << endl;
+        PlaySound("Stay.wav", 0, SND_FILENAME | SND_ASYNC);
+        
+        cout << "°¡»ç º¸±â(1)" << endl;
+        cout << "Á¤Áö(¾Æ¹«Å°³ª)" << endl;
+        cout << "´ÙÀ½ ³ë·¡·Î Àç»ı(2)" << endl;
+        cin >> Staynum; 
+        switch(Staynum){
+        case 1: 
+            cout << "I do the same thing I told you that I never would\n"
+            "I told you I'd change, even\n" 
+            "when I knew I never could\n"
+            "I know that I can't find nobody else\n" 
+            "as good as you\n" 
+            "I need you to stay,\n"
+            "need you to stay, hey(Oh)\n"
+            "I get drunk, wake up, I'm wasted still\n"
+            "I realize the time that I wasted here\n"
+            "I feel like you can't feel the way I feel\n"
+            "Oh, I'll be fucked up\n"
+            "if you can't be right here\n"
+            "Oh, ooh - woah(Oh, ooh - woah, ooh - woah)\n"
+                "Oh, ooh - woah(Oh, ooh - woah, ooh - woah)\n"
+                "Oh, ooh - woah(Oh, ooh - woah, ooh - woah)\n"
+                "Oh, I'll be fucked up\n"
+                "if you can't be right here\n"
+                    "I do the same thing I told you\n"
+                    "that I never would\n"
+                    "I told you I'd change,\n"
+                    "even when I knew I never could\n"
+                    "I know that I can't find nobody else\n"
+                    "as good as you\n"
+                    "I need you to stay, need you to stay, hey\n"
+                    "I do the same thing I told you\n"
+                    "that I never would\n"
+                    "I told you I'd change,\n"
+                    "even when I knew I never could\n"
+                    "I know that I can't find nobody else\n"
+                    "as good as you\n"
+                    "I need you to stay, need you to stay, hey\n"
+                    "When I'm away from you,\n"
+                    "I miss your touch(Ooh)\n"
+                    "You're the reason I believe in love\n"
+                    "It's been difficult for me to trust (Ooh)\n"
+                    "And I'm afraid that I'ma fuck it up\n"
+                    "Ain't no way that I can leave you stranded\n"
+                    "Cause you ain't ever left me empty - handed\n"
+                    "And you know that I know\n"
+                    "that I can't live without you\n"
+                    "So, baby, stay\n"
+                    "Oh, ooh - woah(Oh, ooh - woah, ooh - woah)\n"
+                    "Oh, ooh - woah(Oh, ooh - woah, ooh - woah)\n"
+                    "Oh, ooh - woah(Oh, ooh - woah, ooh - woah)\n"
+                    "I'll be fucked up if you can't be right here\n"
+                    "I do the same thing I told you\n"
+                    "that I never would\n"
+                    "I told you I'd change,\n"
+                    "even when I knew I never could\n"                    
+                    "Iknow that I can't find nobody else\n"
+                    "as good as you\n"
+                    "I need you to stay, need you to stay, hey\n"
+                    "I do the same thing I told you\n"
+                    "that I never would\n"
+                    "I told you I'd change,\n"
+                    "even when I knew I never could\n"
+                    "I know that I can't find nobody else\n"
+                    "as good as you\n"
+                    "I need you to stay, need you to stay, hey\n"
+                    "Woah - oh\n"
+                    "I need you to stay, need you to stay, hey\n";
+        }
+        _getch();
+
+        break;
     case 3: cout << "================================================================================================================" << endl;
-            cout << "\n"; 
-            cout << "                    " << name << "  ë‹˜ì„ ìœ„í•œ ë®¤ë®¤ì˜ í”Œë ˆì´ ë¦¬ìŠ¤íŠ¸ëŠ” " << endl; break;
+        cout << "\n";
+        angry();
+        cout << "\n";
+        cout << "                    " << name << "  ´ÔÀ» À§ÇÑ ¹Â¹ÂÀÇ ÇÃ·¹ÀÌ ¸®½ºÆ®´Â " << endl;
+        cout << "" << endl;
+       
+
+
+
+
+
+
+        break;
+
+
     default: cout << "================================================================================================================" << endl;
-             cout << "\n";
-             cout << name << "ë‹˜! ë®¤ë®¤ì˜ ì·¨í–¥ ì¶”ì²œê³¡ì„ ë“¤ë ¤ë“œë¦´ê²Œìš”!! > < " << endl;
+        cout << "\n";
+
+
+
+        cout << name << "´Ô! ¿À´ÃÀÇ ¹Â¹Â ÃëÇâ ÃßÃµ°îÀ» µé·Áµå¸±°Ô¿ä!! > < " << endl;
     }
 
-        return 0;
+    return 0;
 
 }
